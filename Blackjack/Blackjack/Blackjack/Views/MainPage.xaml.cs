@@ -14,7 +14,7 @@ namespace Blackjack
             InitializeComponent();
         }
 
-        private void Button_Pressed(object sender, EventArgs e)
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
 
         }

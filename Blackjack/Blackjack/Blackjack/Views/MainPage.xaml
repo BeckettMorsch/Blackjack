@@ -2,15 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Blackjack"
-             x:Class="Blackjack.MainPage">
+             x:Class="Blackjack.MainPage"
+            BackgroundColor="ForestGreen">
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Blackjack" 
-           HorizontalOptions="Center"
-           VerticalOptions="Start" />
+        <Label Text="Welcome to Blackjack"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               FontSize="Large"/>
+        
+        <Image Source="Card_logo.png" 
+               Aspect="AspectFit"
+               HorizontalOptions="Center" 
+               VerticalOptions="Start"/>
 
-        <Button Text="Play" Pressed ="Button_Pressed" />
+        <Grid HeightRequest="100" 
+                  WidthRequest="300" 
+                  HorizontalOptions="CenterAndExpand" 
+                  VerticalOptions="CenterAndExpand">
+
+
+            <Image Source="StartButton.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+       </Grid>
     </StackLayout>
 
 </ContentPage>
