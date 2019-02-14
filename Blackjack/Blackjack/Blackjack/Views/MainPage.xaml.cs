@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using Blackjack.Views;
 
 namespace Blackjack
 {
@@ -12,11 +14,12 @@ namespace Blackjack
         public MainPage()
         {
             InitializeComponent();
+           //return new NavigationPage(new MainPage());
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        async private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-
+            await Navigation.PushModalAsync(new GamePage());
         }
     }
 }

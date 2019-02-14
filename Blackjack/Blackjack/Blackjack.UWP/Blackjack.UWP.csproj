@@ -130,8 +130,10 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="BackgroundImage.jpg" />
     <Content Include="Card_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="RedChip.jpg" />
     <Content Include="StartButton.png" />
   </ItemGroup>
   <ItemGroup>
