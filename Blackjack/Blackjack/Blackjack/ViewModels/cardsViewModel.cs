@@ -7,18 +7,36 @@ using Blackjack.Models;
 
 namespace Blackjack.ViewModels
 {
-    class CardsViewModel: INotifyPropertyChanged
-    { 
+    class CardsViewModel : INotifyPropertyChanged
+    {
+
+        public ObservableCollection<Card> Cards { get; set; }
+
+        public void cardsViewModel()
+        {
+            Cards = new ObservableCollection<Card>();
+
+
+        }
+
         
-            public ObservableCollection<Card> Cards { get; set; }
+        public Card draw()
+        {
 
-            public void cardsViewModel()
+        }
+         
+
+        /*public int handTotal(List<Card> hand)
+        {
+            int total = 0;
+            foreach(Card i in hand)
             {
-                Cards = new ObservableCollection<Card>();
-
-
+                total += i.CardValue;
             }
 
+            return total;
+        }*/
+        
             
 
             public event PropertyChangedEventHandler PropertyChanged;
@@ -32,6 +50,7 @@ namespace Blackjack.ViewModels
             }
 
         /* Console app code, need to adapt to MVVM
+         
           bool game = true;
             Random rng = new Random();
             int deal = -1, total = 0;
