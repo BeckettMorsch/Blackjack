@@ -1,12 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Blackjack.Views.GamePage">
+             x:Class="Blackjack.Views.GamePage"
+             BackgroundImage="BackgroundImage.jpg">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200" />
@@ -17,17 +15,77 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Image Source="CardBack.png"
+                <Image Source="Card_logo.png"
                        Grid.Row="0"
                        Grid.Column="0"/>
-                <Image Source="Card"
+                <Image Source="Card_logo.png"
                        Grid.Row="0"
                        Grid.Column="1"/>
             </Grid>
 
-            <!-- Bets -->
-            
+            <Label Text="50"
+                   FontSize="60"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Frame CornerRadius="5"  
+                           BackgroundColor="#ff6666"
+                           Padding="0"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="2,2,2,15">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Stand_Clicked"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Label FontAttributes="Bold" 
+                                   TextColor="Black" 
+                                   Text="Stand" 
+                                   HorizontalOptions="CenterAndExpand" 
+                                   VerticalOptions="CenterAndExpand" 
+                                   LineBreakMode="WordWrap">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Stand_Clicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="5"  
+                           BackgroundColor="#4d4dff"
+                           Padding="0"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Margin="2,2,2,15">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Hit_Clicked"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Label FontAttributes="Bold" 
+                                   TextColor="Black" 
+                                   Text="Hit" 
+                                   HorizontalOptions="CenterAndExpand" 
+                                   VerticalOptions="CenterAndExpand" 
+                                   LineBreakMode="WordWrap">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Hit_Clicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                </Grid>
+            
+                <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200" />
                 </Grid.RowDefinitions>
@@ -37,10 +95,10 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Image Source="Card1"
+                <Image Source="Card_logo.png"
                        Grid.Row="0"
                        Grid.Column="0"/>
-                <Image Source="Card2"
+                <Image Source="Card_logo.png"
                        Grid.Row="0"
                        Grid.Column="1"/>
             </Grid>

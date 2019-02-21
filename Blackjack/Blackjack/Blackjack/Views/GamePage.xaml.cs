@@ -16,5 +16,16 @@ namespace Blackjack.Views
 		{
 			InitializeComponent ();
 		}
-	}
+        public int bet = 0;
+
+        private void Hit_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Stand_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
