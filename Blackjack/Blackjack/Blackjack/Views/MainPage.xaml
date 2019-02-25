@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Blackjack"
              x:Class="Blackjack.MainPage"
-            BackgroundColor="ForestGreen">
+            BackgroundImage="BackgroundImage.jpg">
 
     <StackLayout>
         <!-- Place new controls here -->
         <Label Text="Welcome to Blackjack"
                HorizontalOptions="Center"
-               VerticalOptions="Start"
+               VerticalOptions="Center"
                FontSize="Large"/>
         
         <Image Source="Card_logo.png" 
