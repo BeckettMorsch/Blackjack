@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Blackjack.Views.GamePage"
-             BackgroundImage="BackgroundImage.jpg">
+             BackgroundImage="BackgroundImage.png">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -27,6 +27,36 @@
                    FontSize="60"
                    HorizontalOptions="Center"
                    VerticalOptions="CenterAndExpand"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width ="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source= "BlueChip.png"
+                      Grid.Row="0"
+                      Grid.Column="0"/>
+                <Image Source= "RedChip.png"
+                      Grid.Row="0"
+                      Grid.Column="1"/>
+                <Image Source= "PurpleChip.png"
+                      Grid.Row="0"
+                      Grid.Column="2"/>
+                <Image Source= "BlackChip.png"
+                      Grid.Row="0"
+                      Grid.Column="3"/>
+                <Image Source= "GreenChip.png"
+                      Grid.Row="0"
+                      Grid.Column="4"/>
+            </Grid>
 
             <Grid>
                 <Grid.RowDefinitions>
