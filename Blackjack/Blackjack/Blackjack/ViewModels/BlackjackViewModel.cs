@@ -447,7 +447,10 @@ namespace Blackjack.ViewModels
 
             if(drawn.Contains(rand))
             {
-                Draw();
+                // Draw();
+                //fix
+                drawn.Add(rand);
+                return rand;
             }
             else
             {
