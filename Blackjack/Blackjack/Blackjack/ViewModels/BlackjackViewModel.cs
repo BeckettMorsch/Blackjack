@@ -438,19 +438,18 @@ namespace Blackjack.ViewModels
             //reset variables
 
         }
-
+        ObservableCollection<CardItem> pHand { get; set; }
+        ObservableCollection<CardItem> dHand { get; set; }
+        // Returns number between 1 and 52
+        List<int> drawn = new List<int>() { };
         public int Draw()
         {
             Random rnd = new Random();
             int rand = rnd.Next(1, 52);
-            List<int> drawn = new List<int>() { };
 
             if(drawn.Contains(rand))
             {
-                // Draw();
-                //fix
-                drawn.Add(rand);
-                return rand;
+                return Draw();                
             }
             else
             {
@@ -460,6 +459,24 @@ namespace Blackjack.ViewModels
 
         }
 
+        int bet = 0;
+        public int Bet(int num)
+        {
+            bet = bet + num;
+            return bet; 
+        }
+
+        //Creates an instance of the BlackjackViewModel
+        public static BlackjackViewModel Current
+        {
+            get
+            {
+                if (current == null)
+                    current = new BlackjackViewModel();
+
+                return current;
+            }
+        }
 
     }
 }

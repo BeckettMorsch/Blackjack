@@ -101,7 +101,7 @@
                 <Image Source="Card_logo.png"
                        Grid.Row="0"
                        Grid.Column="1"/>
-            </Grid>
+                </Grid>
 
         </StackLayout>
     </ContentPage.Content>
