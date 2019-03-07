@@ -11,31 +11,123 @@ namespace Blackjack.ViewModels
     {
 
         public ObservableCollection<Card> Cards { get; set; }
+        public ObservableCollection<Card> pHand { get; set; }
+        public ObservableCollection<Card> dHand { get; set; }
+        public Card[] refresher = new Card[52];
 
         public void cardsViewModel()
         {
+
             Cards = new ObservableCollection<Card>();
+            #region cards  
+            Cards.Add(new Card {CardValue = 2, CardName = "Two_hearts", Suit = "Hearts"});
+            Cards.Add(new Card { CardValue = 2, CardName = "Two_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 2, CardName = "Two_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 2, CardName = "Two_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 3, CardName = "Three_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 3, CardName = "Three_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 3, CardName = "Three_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 3, CardName = "Three_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 4, CardName = "Four_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 4, CardName = "Four_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 4, CardName = "Four_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 4, CardName = "Four_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 5, CardName = "Five_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 5, CardName = "Five_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 5, CardName = "Five_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 5, CardName = "Five_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 6, CardName = "Six_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 6, CardName = "Six_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 6, CardName = "Six_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 6, CardName = "Sixe_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 7, CardName = "Seven_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 7, CardName = "Seven_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 7, CardName = "Seven_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 7, CardName = "Seven_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 8, CardName = "Eight_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 8, CardName = "Eight_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 8, CardName = "Eight_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 8, CardName = "Eight_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 9, CardName = "Nine_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 9, CardName = "Nine_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 9, CardName = "Nine_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 9, CardName = "Nine_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Ten_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Ten_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Ten_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Ten_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Jack_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Jack_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Jack_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Jack_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Queen_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Queen_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Queen_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 10, CardName = "Queen_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 10, CardName = "King_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 10, CardName = "King_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 10, CardName = "King_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 10, CardName = "King_diamonds", Suit = "Diamonds" });
+            Cards.Add(new Card { CardValue = 11, CardName = "Ace_hearts", Suit = "Hearts" });
+            Cards.Add(new Card { CardValue = 11, CardName = "Ace_spades", Suit = "Spades" });
+            Cards.Add(new Card { CardValue = 11, CardName = "Ace_clubs", Suit = "Clubs" });
+            Cards.Add(new Card { CardValue = 11, CardName = "Ace_diamonds", Suit = "Diamonds" });
+            #endregion
+            Cards.CopyTo(refresher, 0);
 
-
+            pHand = new ObservableCollection<Card>();
+            dHand = new ObservableCollection<Card>();
         }
 
         
-        public Card draw()
-        {
 
+        public void draw(Boolean turn)
+        {
+            Random rng = new Random();
+            int num = rng.Next(0, Cards.Count - 1);
+            if (turn)
+            {
+                dHand.Add(Cards[num]);
+            }
+            else
+            {
+                pHand.Add(Cards[num]);
+            }
+            Cards.Remove(Cards[num]);
         }
-         
 
-        /*public int handTotal(List<Card> hand)
+
+
+        public void reset ()
         {
+            pHand.Clear();
+            dHand.Clear();
+            Cards.Clear();
+            
+            foreach(Card i in refresher)
+            {
+                Cards.Add(i);
+            }
+        }
+
+
+        
+        public int handTotal(List<Card> hand)
+        { 
             int total = 0;
             foreach(Card i in hand)
             {
                 total += i.CardValue;
             }
 
+            if (total > 21 && hand.Contains(Array.Find(refresher, x => x.CardValue == 11)))
+            {
+                hand.Find(x => x.CardValue == 11).CardValue = 1;
+                return handTotal(hand);
+            }
+
             return total;
-        }*/
+        }
         
             
 
@@ -49,117 +141,6 @@ namespace Blackjack.ViewModels
                 }
             }
 
-        /* Console app code, need to adapt to MVVM
-         
-          bool game = true;
-            Random rng = new Random();
-            int deal = -1, total = 0;
-            string input = "";
-
-        while (game)
-            {
-                List<int> deck = new List<int> { 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11, 12, 12, 12, 12, 13, 13, 13, 13 };
-                List<int> playerDeck = new List<int> { };
-                List<int> houseDeck = new List<int> { };
-
-                deal = rng.Next(0, deck.Count());
-                playerDeck.Add(deck[deal]);
-                deck.Remove(deal);
-
-                deal = rng.Next(0, deck.Count());
-                playerDeck.Add(deck[deal]);
-                deck.Remove(deal);
-                Console.Write(playerDeck[0] + " " + playerDeck[1]);
-
-                while (counter(playerDeck) < 21)
-                {
-                    input = Console.ReadLine();
-
-                    if (input.Equals("hit")) // sub for a button press event
-                    {
-                        deal = rng.Next(0, deck.Count());
-                        playerDeck.Add(deck[deal]);
-                        Console.Write(deck[deal]);
-                        deck.Remove(deal);
-
-                    }
-                    else if (input.Equals("stand"))
-                    {
-                        break;
-                    }
-                }
-
-               
-
-                while (counter(houseDeck) < 17)
-                {
-                    deal = rng.Next(0, deck.Count());
-                    houseDeck.Add(deck[deal]);
-                    deck.Remove(deal);
-                }
-
-                if (counter(playerDeck) > 21)
-                {
-                    Console.Write("Bust");
-                    
-                }
-
-                else if (counter(houseDeck) > 21)
-                {
-                    Console.Write("House bust");
-                }
-
-                else if (counter(playerDeck) == counter(houseDeck))
-                {
-                    Console.Write("tie");
-                    
-                }
-
-                else if(counter(playerDeck) > counter(houseDeck))
-                {
-                    Console.Write("BIIIIG WIN");
-                        
-                }
-
-                else if (counter(playerDeck) < counter(houseDeck))
-                {
-                    Console.Write("house takes the pot");
-                }
-
-               
-
-                Console.Write("\nplay again?");
-                if (Console.ReadLine().Equals("no"))
-                {
-                    break;
-                }
-
-
-
-            }
-            Console.ReadLine();
-        }
-
-
-        public static int counter(List<int> hand)
-        {
-            int total = 0;
-
-            foreach (int card in hand)
-            {
-                if (card <= 9)
-                {
-                    total += card;
-                }
-                else
-                {
-                    total += 10;
-                }
-            }
-
-            return total;
-        }
-
-          */
+        
     }
 }
