@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Blackjack.ViewModels;
 
 namespace Blackjack.Views
 {
@@ -17,6 +18,8 @@ namespace Blackjack.Views
 			InitializeComponent ();
 		}
         public int bet = 0;
+        //public int playerTotal = 0;
+        //public int dealerTotal = 0;
 
         private void Hit_Clicked(object sender, EventArgs e)
         {
