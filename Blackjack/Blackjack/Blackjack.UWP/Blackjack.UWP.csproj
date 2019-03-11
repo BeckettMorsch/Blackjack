@@ -130,7 +130,75 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Cards\Clubs\AC.png" />
+    <Content Include="Cards\Clubs\2C.png" />
+    <Content Include="Cards\Clubs\3C.png" />
+    <Content Include="Cards\Clubs\4C.png" />
+    <Content Include="Cards\Clubs\5C.png" />
+    <Content Include="Cards\Clubs\6C.png" />
+    <Content Include="Cards\Clubs\7C.png" />
+    <Content Include="Cards\Clubs\8C.png" />
+    <Content Include="Cards\Clubs\9C.png" />
+    <Content Include="Cards\Clubs\10C.png" />
+    <Content Include="Cards\Clubs\JC.png" />
+    <Content Include="Cards\Clubs\QC.png" />
+    <Content Include="Cards\Clubs\KC.png" />
+    <Content Include="Cards\Diamonds\AD.png" />
+    <Content Include="Cards\Diamonds\2D.png" />
+    <Content Include="Cards\Diamonds\3D.png" />
+    <Content Include="Cards\Diamonds\4D.png" />
+    <Content Include="Cards\Diamonds\5D.png" />
+    <Content Include="Cards\Diamonds\6D.png" />
+    <Content Include="Cards\Diamonds\7D.png" />
+    <Content Include="Cards\Diamonds\8D.png" />
+    <Content Include="Cards\Diamonds\9D.png" />
+    <Content Include="Cards\Diamonds\10D.png" />
+    <Content Include="Cards\Diamonds\JD.png" />
+    <Content Include="Cards\Diamonds\QD.png" />
+    <Content Include="Cards\Diamonds\KD.png" />
+    <Content Include="Cards\Hearts\AH.png" />
+    <Content Include="Cards\Hearts\2H.png" />
+    <Content Include="Cards\Hearts\3H.png" />
+    <Content Include="Cards\Hearts\4H.png" />
+    <Content Include="Cards\Hearts\5H.png" />
+    <Content Include="Cards\Hearts\6H.png" />
+    <Content Include="Cards\Hearts\7H.png" />
+    <Content Include="Cards\Hearts\8H.png" />
+    <Content Include="Cards\Hearts\9H.png" />
+    <Content Include="Cards\Hearts\10H.png" />
+    <Content Include="Cards\Hearts\JH.png" />
+    <Content Include="Cards\Hearts\QH.png" />
+    <Content Include="Cards\Hearts\KH.png" />
+    <Content Include="Cards\Spades\AS.png" />
+    <Content Include="Cards\Spades\2S.png" />
+    <Content Include="Cards\Spades\3S.png" />
+    <Content Include="Cards\Spades\4S.png" />
+    <Content Include="Cards\Spades\5S.png" />
+    <Content Include="Cards\Spades\6S.png" />
+    <Content Include="Cards\Spades\7S.png" />
+    <Content Include="Cards\Spades\8S.png" />
+    <Content Include="Cards\Spades\9S.png" />
+    <Content Include="Cards\Spades\10S.png" />
+    <Content Include="Cards\Spades\JS.png" />
+    <Content Include="Cards\Spades\QS.png" />
+    <Content Include="Cards\Spades\KS.png" />
     <Content Include="Card_logo.png" />
+    <Content Include="BackgroundImage.png" />
+    <Content Include="BlackChip.png" />
+    <Content Include="BlueChip.png" />
+    <Content Include="GreenChip.png" />
+    <Content Include="PurpleChip.png" />
+    <Content Include="RedChip.png" />
+    <Content Include="Numbers\number0.png" />
+    <Content Include="Numbers\number1.png" />
+    <Content Include="Numbers\number2.png" />
+    <Content Include="Numbers\number3.png" />
+    <Content Include="Numbers\number4.png" />
+    <Content Include="Numbers\number5.png" />
+    <Content Include="Numbers\number6.png" />
+    <Content Include="Numbers\number7.png" />
+    <Content Include="Numbers\number8.png" />
+    <Content Include="Numbers\number9.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="StartButton.png" />
   </ItemGroup>
@@ -154,6 +222,7 @@
       <Name>Blackjack</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
