@@ -14,6 +14,8 @@ namespace Blackjack.ViewModels
     {
         private static BlackjackViewModel current = null;
         private ObservableCollection<CardItem> Cards { get; set; }
+        
+        
         //List of cards that have been drawn?
         public void Reset()
         {
@@ -439,6 +441,42 @@ namespace Blackjack.ViewModels
 
         }
 
+        int bet = 0;
+        public int Bet(int num)
+        {
+            bet += num;
+            return CurrentBet;
+        }
+
+        public static BlackjackViewModel Current
+        {
+            get
+            {
+                if(current == null)
+                {
+                    current = new BlackjackViewModel();
+                }
+
+                return current;
+            }
+        }
+
+        public int currentBet;
+        public int CurrentBet
+        {
+            set
+            {
+                currentBet = bet;
+                OnPropertyChanged("CurrentBet");
+            }
+            get
+            {
+                currentBet = bet;
+                return currentBet;
+            }
+            
+        }
+
         public int Draw()
         {
             Random rnd = new Random();
@@ -460,7 +498,12 @@ namespace Blackjack.ViewModels
 
         }
 
+        public void OnPropertyChanged (string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
 
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
 
