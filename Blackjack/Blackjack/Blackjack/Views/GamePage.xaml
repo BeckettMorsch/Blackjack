@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Blackjack.Views.GamePage"
-             BackgroundImage="BackgroundImage.jpg">
+             BackgroundImage="BackgroundImage.png">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -23,10 +23,76 @@
                        Grid.Column="1"/>
             </Grid>
 
-            <Label Text="50"
+            <Label x:Name="BetDis"
+                   Text= "{Binding Bet}"
                    FontSize="60"
                    HorizontalOptions="Center"
                    VerticalOptions="CenterAndExpand"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width ="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source= "RedChip.png"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Aspect = "AspectFill">
+                    <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped= "Bet_50"/>
+                    </Image.GestureRecognizers> 
+                </Image>
+                
+                <Image Source= "GreenChip.png"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Aspect = "AspectFill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="Bet_100"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source= "BlueChip.png"
+                       Grid.Row="0"
+                       Grid.Column="2"
+                       Aspect = "AspectFill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="Bet_500"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source= "PurpleChip.png"
+                       Grid.Row="0"
+                       Grid.Column="3"
+                       Aspect = "AspectFill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="Bet_1000"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                
+                <Image Source= "BlackChip.png"
+                      Grid.Row="0"
+                      Grid.Column="4"
+                       Aspect = "AspectFill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="Bet_5000"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                
+            </Grid>
 
             <Grid>
                 <Grid.RowDefinitions>

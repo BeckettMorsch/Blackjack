@@ -14,6 +14,8 @@ namespace Blackjack.ViewModels
     {
         private static BlackjackViewModel current = null;
         private ObservableCollection<CardItem> Cards { get; set; }
+        
+        
         //List of cards that have been drawn?
         public void Reset()
         {
@@ -442,6 +444,43 @@ namespace Blackjack.ViewModels
         ObservableCollection<CardItem> dHand { get; set; }
         // Returns number between 1 and 52
         List<int> drawn = new List<int>() { };
+
+        int bet = 0;
+        public int Bet(int num)
+        {
+            bet += num;
+            return CurrentBet;
+        }
+
+        public static BlackjackViewModel Current
+        {
+            get
+            {
+                if(current == null)
+                {
+                    current = new BlackjackViewModel();
+                }
+
+                return current;
+            }
+        }
+
+        public int currentBet;
+        public int CurrentBet
+        {
+            set
+            {
+                currentBet = bet;
+                OnPropertyChanged("CurrentBet");
+            }
+            get
+            {
+                currentBet = bet;
+                return currentBet;
+            }
+            
+        }
+
         public int Draw()
         {
             Random rnd = new Random();
@@ -459,25 +498,16 @@ namespace Blackjack.ViewModels
 
         }
 
-        int bet = 0;
-        public int Bet(int num)
+        
+        
+        public void OnPropertyChanged (string property)
         {
-            bet = bet + num;
-            return bet; 
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
-        //Creates an instance of the BlackjackViewModel
-        public static BlackjackViewModel Current
-        {
-            get
-            {
-                if (current == null)
-                    current = new BlackjackViewModel();
 
-                return current;
-            }
-        }
 
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
 
