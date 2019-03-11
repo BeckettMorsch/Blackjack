@@ -88,12 +88,15 @@ namespace Blackjack.ViewModels
             if (turn)
             {
                 dHand.Add(Cards[num]);
+                OnPropertyChanged("dHand");
             }
             else
             {
                 pHand.Add(Cards[num]);
+                OnPropertyChanged("pHand");
             }
             Cards.Remove(Cards[num]);
+            OnPropertyChanged("Cards");
         }
 
 
@@ -104,10 +107,13 @@ namespace Blackjack.ViewModels
             dHand.Clear();
             Cards.Clear();
             
-            foreach(Card i in refresher)
+            foreach (Card i in refresher)
             {
                 Cards.Add(i);
             }
+            OnPropertyChanged("Cards");
+            OnPropertyChanged("pHand");
+            OnPropertyChanged("dHand");
         }
 
 
