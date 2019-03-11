@@ -440,6 +440,10 @@ namespace Blackjack.ViewModels
             //reset variables
 
         }
+        ObservableCollection<CardItem> pHand { get; set; }
+        ObservableCollection<CardItem> dHand { get; set; }
+        // Returns number between 1 and 52
+        List<int> drawn = new List<int>() { };
 
         int bet = 0;
         public int Bet(int num)
@@ -481,14 +485,10 @@ namespace Blackjack.ViewModels
         {
             Random rnd = new Random();
             int rand = rnd.Next(1, 52);
-            List<int> drawn = new List<int>() { };
 
             if(drawn.Contains(rand))
             {
-                // Draw();
-                //fix
-                drawn.Add(rand);
-                return rand;
+                return Draw();                
             }
             else
             {
@@ -498,10 +498,14 @@ namespace Blackjack.ViewModels
 
         }
 
+        
+        
         public void OnPropertyChanged (string property)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
