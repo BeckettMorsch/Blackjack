@@ -19,15 +19,16 @@ namespace Blackjack.Views
 		{
 			InitializeComponent ();
             this.BindingContext = vm = BlackjackViewModel.Current;
-		}
+            MoneyDis.Text = "" + vm.DisplayMoney;
+        }
        
         public int bet = 0;
         //public int playerTotal = 0;
         //public int dealerTotal = 0;
-
+        
         private void Hit_Clicked(object sender, EventArgs e)
         {
-
+            MoneyDis.Text = "" + vm.DisplayMoney;
         }
 
         private void Stand_Clicked(object sender, EventArgs e)

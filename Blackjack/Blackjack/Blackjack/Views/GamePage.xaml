@@ -22,7 +22,11 @@
                        Grid.Row="0"
                        Grid.Column="1"/>
             </Grid>
-
+            <Label x:Name="MoneyDis"
+                   Text= "{Binding Money}"
+                   FontSize="60"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
             <Label x:Name="BetDis"
                    Text= "{Binding Bet}"
                    FontSize="60"
