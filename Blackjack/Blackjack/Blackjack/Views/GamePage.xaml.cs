@@ -36,6 +36,11 @@ namespace Blackjack.Views
 
         }
 
+        private void Clear_Bet_Clicked(object sender, EventArgs e)
+        {
+            BetDis.Text = "" + vm.ClearBet;
+        }
+
         private void Bet_50(object sender, EventArgs e)
         {
             vm.Bet(50);
