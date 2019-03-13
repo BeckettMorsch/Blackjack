@@ -150,8 +150,31 @@
                     </StackLayout>
                 </Frame>
                 </Grid>
+
+            <Frame CornerRadius="5"  
+                           BackgroundColor="#00ffff"
+                           Padding="0"
+                           Margin="2,2,2,15"
+                           HeightRequest="100">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Clear_Bet_Clicked"/>
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <Label FontAttributes="Bold" 
+                                   TextColor="Black" 
+                                   Text="Clear Bet" 
+                                   HorizontalOptions="CenterAndExpand" 
+                                   VerticalOptions="CenterAndExpand" 
+                                   LineBreakMode="WordWrap">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Clear_Bet_Clicked"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Frame>
             
-                <Grid>
+
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200" />
                 </Grid.RowDefinitions>

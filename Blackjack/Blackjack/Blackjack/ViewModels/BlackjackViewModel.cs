@@ -465,6 +465,20 @@ namespace Blackjack.ViewModels
             }
         }
 
+        public int ClearBet
+        {
+            set
+            {
+                bet = 0;
+                OnPropertyChanged("ClearBet"); 
+            }
+            get
+            {
+                bet = 0;
+                return bet;
+            }
+        }
+
         public int currentBet;
         public int CurrentBet
         {
